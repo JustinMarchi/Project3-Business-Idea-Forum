@@ -27,7 +27,9 @@ function Login() {
       withCredentials: true,
 
       url: "https://project3-business-idea-forum.herokuapp.com/api/auth/register",
-    }).then((res) => alert("Thank you for registering! Please log in!"));
+    }).then((res) => 
+    alert("Thank you for registering! Please log in!"),
+    document.getElementsByClassName('RegisterField').value="");
   };
 
   const login = () => {
@@ -65,12 +67,12 @@ function Login() {
       <div className=" animate__animated animate__backInLeft">
         <h3 className="LoginText">Register</h3>
         <input
-          className="InputField mb-3"
+          className="InputField mb-3 RegisterField"
           placeholder="username"
           onChange={(e) => setRegisterUsername(e.target.value)}
         />
         <input
-          className="InputField"
+          className="InputField RegisterField"
           placeholder="password"
           type="password"
           onChange={(e) => setRegisterPassword(e.target.value)}
